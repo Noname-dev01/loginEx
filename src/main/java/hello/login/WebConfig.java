@@ -1,22 +1,22 @@
 package hello.login;
 
 import hello.login.web.argumentresolver.LoginMemberArgumentResolver;
-import hello.login.web.filter.LogFilter;
-import hello.login.web.filter.LoginCheckFilter;
+//import hello.login.web.filter.LogFilter;
+//import hello.login.web.filter.LoginCheckFilter;
 import hello.login.web.interceptor.LogIntercepter;
 import hello.login.web.interceptor.LoginCheckIntercepter;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
+//import org.springframework.boot.web.servlet.FilterRegistrationBean;
+//import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import javax.servlet.Filter;
+//import javax.servlet.Filter;
 import java.util.List;
 
-//Intercepter 등록할때는 빈 방식이 아닌 오버라이드로 해야된다.
-//implements WebMvcConfigurer도 해줘야 한다.
+//intercepter 등록할때는 빈 방식이 아닌 오버라이드로 해야된다.
+//implements WebMvcConfigurer 도 해줘야 한다.
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
@@ -40,22 +40,22 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
 //    @Bean
-    public FilterRegistrationBean logFilter(){
-        FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
-        filterRegistrationBean.setFilter(new LogFilter());
-        filterRegistrationBean.setOrder(1);
-        filterRegistrationBean.addUrlPatterns("/*");
-
-        return filterRegistrationBean;
-    }
+//    public FilterRegistrationBean logFilter(){
+//        FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
+//        filterRegistrationBean.setFilter(new LogFilter());
+//        filterRegistrationBean.setOrder(1);
+//        filterRegistrationBean.addUrlPatterns("/*");
+//
+//        return filterRegistrationBean;
+//    }
 
 //    @Bean
-    public FilterRegistrationBean loginCheckFilter(){
-        FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
-        filterRegistrationBean.setFilter(new LoginCheckFilter());
-        filterRegistrationBean.setOrder(2);
-        filterRegistrationBean.addUrlPatterns("/*");
-
-        return filterRegistrationBean;
-    }
+//    public FilterRegistrationBean loginCheckFilter(){
+//        FilterRegistrationBean<Filter> filterRegistrationBean = new FilterRegistrationBean<>();
+//        filterRegistrationBean.setFilter(new LoginCheckFilter());
+//        filterRegistrationBean.setOrder(2);
+//        filterRegistrationBean.addUrlPatterns("/*");
+//
+//        return filterRegistrationBean;
+//    }
 }
